@@ -7,6 +7,7 @@
 
 ------------
 
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
 This project is basically a re-group of common SCSS materials and following [7-1 component structure pattern](https://sass-guidelin.es/#architecture "7-1 component structure pattern"). 
 

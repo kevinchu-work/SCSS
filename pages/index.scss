@@ -1,0 +1,10 @@
+@charset 'utf-8';
+
+@import '../main';
+
+html, body {
+    padding: 0;
+    margin: 0;
+    // @include dimen(100%);
+    width: 100%;
+}

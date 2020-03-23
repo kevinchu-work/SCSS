@@ -3,7 +3,7 @@
  * Oct 19: Largely rewrite to be more flexible
  *      - Before/After taking "Content" now
  *      - Ignore the rest of parameters if neither Image nor color exist
- *      - Able to handle Hover & Active BG 
+ *      - Able to handle Hover & Active BG
  */
 @charset 'utf-8';
 
@@ -12,13 +12,38 @@
   background: none !important;
 }
 
-@mixin bg-image($image: null,
-                $color: null,
-                $position: center center,
-                $size: 100%,
-                $repeat: no-repeat,
-                $clip: null,
-                $bg-attach: null) {
+@mixin bg($position  : center center,
+          $size      : 100%,
+          $repeat    : no-repeat,
+          $color     : null,
+          $clip      : null,
+          $bg-attach : null) {
+
+  background-position : $position;
+  background-size     : $size;
+  background-repeat   : $repeat;
+
+  @if ($color) {
+    background-color: $color;
+  }
+
+  @if ($clip) {
+    background-clip: $clip;
+  }
+
+  @if ($bg-attach) {
+    background-attachment: $bg-attach;
+  }
+
+}
+
+@mixin bg-image($image     : null,
+                $color     : null,
+                $position  : center center,
+                $size      : 100%,
+                $repeat    : no-repeat,
+                $clip      : null,
+                $bg-attach : null) {
 
   @if ($image) {
     // and (type-of($image) == list) and (length($list: $image) >= 1) {
@@ -69,12 +94,12 @@
 
 }
 
-@mixin bg-image-only( $type: null,
-                      $image: null,
-                      $content: null,
-                      $position: null,
-                      $size: null,
-                      $repeat: null) {
+@mixin bg-image-only( $type     : null,
+                      $image    : null,
+                      $content  : null,
+                      $position : null,
+                      $size     : null,
+                      $repeat   : null) {
 
   &:#{$type} {
     @include bg-image($image: $image,
@@ -89,24 +114,24 @@
 
 }
 
-@mixin bg-image-after($image: null,
-                      $color: null,
-                      $content: null,
-                      $position: center center,
-                      $size: 100%,
-                      $repeat: no-repeat) {
+@mixin bg-image-after($image    : null,
+                      $color    : null,
+                      $content  : null,
+                      $position : center center,
+                      $size     : 100%,
+                      $repeat   : no-repeat) {
 
   @include bg-image-only(after, $image, $position, $size, $repeat);
 
 }
 
-@mixin bg-image-before( $image: null,
-                        $color: null,
-                        $content: null,
-                        $position: center center,
-                        $size: 100%,
-                        $repeat: no-repeat) {
+@mixin bg-image-before( $image    : null,
+                        $color    : null,
+                        $content  : null,
+                        $position : center center,
+                        $size     : 100%,
+                        $repeat   : no-repeat) {
 
   @include bg-image-only(before, $image, $position, $size, $repeat);
-  
+
 }

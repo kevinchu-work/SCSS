@@ -10,20 +10,6 @@ $IMAGES_PATH              : '/public/imgs'    !default;
 $NS                       : '' !default;    // Please change to client short name
 
 
-// Breakpoint
-$PAGE_BREAKPOINTS: () !default;
-$PAGE_BREAKPOINTS: map-merge(
-  (
-    xs:   0,
-    sm:   576px,
-    md:   768px,
-    lg:   992px,
-    xl:   1200px
-  ), 
-  $PAGE_BREAKPOINTS
-);
-
-
 // Font & styling ------------------------------------------------------
 $BASE_FONT_SIZE           : 10px  !default;   // Benefit of 10px: prefect for rem
 $BASE_LINE_HEIGHT         : 1.5   !default;   // WCAG Level AA

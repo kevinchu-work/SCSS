@@ -1,31 +1,50 @@
-// TODO: make use of _variables.scss predefined screen breakpoint
-
+// Breakpoint Parameters
 $screen-sm-max    :   576px   !default;    // Small tablets and large smartphones (landscape view)
 $screen-md-max    :   768px   !default;    // Small tablets (portrait view)
 $screen-lg-max    :   992px   !default;    // Tablets and small desktops
 $screen-xl-max    :   1200px  !default;   // Large tablets and desktops
 
 
+@mixin sm-up {
+  @media screen and (min-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
 @mixin sm {
-  @media screen and (max-width: #{$screen-sm-max}) {
-      @content;
+  @media screen and (max-width: #{$screen-sm-max - 0.02px}) {
+    @content;
   }
 }
 
+@mixin md-up {
+  @media screen and (min-width: #{$screen-md-max}) {
+    @content;
+  }
+}
 @mixin md {
-  @media screen and (max-width: #{$screen-md-max}) {
-      @content;
+  @media screen and (max-width: #{$screen-md-max - 0.02px}) {
+    @content;
   }
 }
 
+@mixin lg-up {
+  @media screen and (min-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
 @mixin lg {
-  @media screen and (max-width: #{$screen-lg-max}) {
-      @content;
+  @media screen and (max-width: #{$screen-lg-max - 0.02px}) {
+    @content;
   }
 }
 
+@mixin xl-up {
+  @media screen and (min-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
 @mixin xl {
-  @media screen and (max-width: #{$screen-xl-max}) {
-      @content;
+  @media screen and (max-width: #{$screen-xl-max - 0.02px}) {
+    @content;
   }
 }
